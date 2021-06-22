@@ -1,0 +1,142 @@
+id,cat_id,style_name,last_mod
+1,1,Classic English-Style Pale Ale,2010-10-24 13:53:31 UTC
+2,1,English-Style India Pale Ale,2010-06-15 19:14:38 UTC
+3,1,Ordinary Bitter,2010-06-15 19:14:54 UTC
+4,1,Special Bitter or Best Bitter,2010-06-15 19:15:02 UTC
+5,1,Extra Special Bitter,2010-06-15 19:15:09 UTC
+6,1,English-Style Summer Ale,2010-06-15 19:15:20 UTC
+7,1,Scottish-Style Light Ale,2010-06-15 19:15:28 UTC
+8,1,Scottish-Style Heavy Ale,2010-06-15 19:15:37 UTC
+9,1,Scottish-Style Export Ale,2010-06-15 19:15:45 UTC
+10,1,English-Style Pale Mild Ale,2010-06-15 19:16:17 UTC
+11,1,English-Style Dark Mild Ale,2010-06-15 19:16:27 UTC
+12,1,English-Style Brown Ale,2010-06-15 19:16:34 UTC
+13,1,Old Ale,2010-06-15 19:16:40 UTC
+14,1,Strong Ale,2010-06-15 19:16:46 UTC
+15,1,Scotch Ale,2010-06-15 19:16:54 UTC
+16,1,British-Style Imperial Stout,2010-06-15 19:17:07 UTC
+17,1,British-Style Barley Wine Ale,2010-06-15 19:17:16 UTC
+18,1,Robust Porter,2010-06-15 19:17:37 UTC
+19,1,Brown Porter,2010-06-15 19:17:43 UTC
+20,1,Sweet Stout,2010-06-15 19:17:50 UTC
+21,1,Oatmeal Stout,2010-06-15 19:17:56 UTC
+22,2,Irish-Style Red Ale,2010-06-15 19:21:04 UTC
+23,2,Classic Irish-Style Dry Stout,2010-06-15 19:21:07 UTC
+24,2,Foreign (Export)-Style Stout,2010-06-15 19:21:14 UTC
+25,2,Porter,2010-06-15 19:21:39 UTC
+26,3,American-Style Pale Ale,2010-06-15 19:22:32 UTC
+27,3,Fresh Hop Ale,2010-06-15 19:22:41 UTC
+28,3,Pale American-Belgo-Style Ale,2010-06-15 19:22:51 UTC
+29,3,Dark American-Belgo-Style Ale,2010-06-15 19:23:00 UTC
+30,3,American-Style Strong Pale Ale,2010-06-15 19:23:07 UTC
+31,3,American-Style India Pale Ale,2010-06-15 19:23:15 UTC
+32,3,Imperial or Double India Pale Ale,2010-06-15 19:23:23 UTC
+33,3,American-Style Amber/Red Ale,2010-06-15 19:23:30 UTC
+34,3,Imperial or Double Red Ale,2010-06-15 19:23:52 UTC
+35,3,American-Style Barley Wine Ale,2010-06-15 19:23:59 UTC
+36,3,American-Style Wheat Wine Ale,2010-06-15 19:24:08 UTC
+37,3,Golden or Blonde Ale,2010-06-15 19:24:15 UTC
+38,3,American-Style Brown Ale,2010-06-15 19:24:23 UTC
+39,3,Smoke Porter,2010-06-15 19:24:30 UTC
+40,3,American-Style Sour Ale,2010-06-15 19:24:58 UTC
+41,3,American-Style India Black Ale,2010-06-15 19:25:05 UTC
+42,3,American-Style Stout,2010-06-15 19:25:11 UTC
+43,3,American-Style Imperial Stout,2010-06-15 19:25:18 UTC
+44,3,Specialty Stouts,2010-06-15 19:25:26 UTC
+45,3,American-Style Imperial Porter,2010-06-15 19:25:33 UTC
+46,3,Porter,2010-06-15 19:25:53 UTC
+47,4,German-Style Kolsch,2010-06-15 20:43:02 UTC
+48,4,Berliner-Style Weisse,2010-06-15 19:29:33 UTC
+49,4,Leipzig-Style Gose,2010-06-15 19:29:40 UTC
+50,4,South German-Style Hefeweizen,2010-06-15 19:29:47 UTC
+51,4,South German-Style Kristal Weizen,2010-06-15 19:29:55 UTC
+52,4,German-Style Leichtes Weizen,2010-06-15 19:30:01 UTC
+53,4,South German-Style Bernsteinfarbenes Weizen,2010-06-15 19:30:18 UTC
+54,4,South German-Style Dunkel Weizen,2010-06-15 19:30:25 UTC
+55,4,South German-Style Weizenbock,2010-06-15 19:30:33 UTC
+56,4,Bamberg-Style Weiss Rauchbier,2010-06-15 19:30:47 UTC
+57,4,German-Style Brown Ale/Altbier,2010-07-11 16:08:56 UTC
+58,4,Kellerbier - Ale,2010-06-15 19:38:57 UTC
+59,5,Belgian-Style Flanders/Oud Bruin,2010-06-15 19:32:09 UTC
+60,5,Belgian-Style Dubbel,2010-06-15 19:32:15 UTC
+61,5,Belgian-Style Tripel,2010-06-15 19:32:23 UTC
+62,5,Belgian-Style Quadrupel,2010-06-15 19:32:31 UTC
+63,5,Belgian-Style Blonde Ale,2010-06-15 19:32:39 UTC
+64,5,Belgian-Style Pale Ale,2010-06-15 19:32:47 UTC
+65,5,Belgian-Style Pale Strong Ale,2010-06-15 19:32:55 UTC
+66,5,Belgian-Style Dark Strong Ale,2010-06-15 19:33:01 UTC
+67,5,Belgian-Style White,2010-06-15 19:33:16 UTC
+68,5,Belgian-Style Lambic,2010-06-15 19:33:43 UTC
+69,5,Belgian-Style Gueuze Lambic,2010-06-15 19:33:52 UTC
+70,5,Belgian-Style Fruit Lambic,2010-06-15 19:34:01 UTC
+71,5,Belgian-Style Table Beer,2010-06-15 19:34:08 UTC
+72,5,Other Belgian-Style Ales,2010-06-15 19:34:15 UTC
+73,5,French-Style Biere de Garde,2010-07-11 15:55:26 UTC
+74,5,French & Belgian-Style Saison,2010-06-15 19:34:30 UTC
+75,6,International-Style Pale Ale,2010-06-15 19:34:51 UTC
+76,6,Australasian-Style Pale Ale,2010-06-15 19:35:01 UTC
+77,7,German-Style Pilsener,2010-06-15 19:35:42 UTC
+78,7,Bohemian-Style Pilsener,2010-06-15 19:35:54 UTC
+79,7,European Low-Alcohol Lager,2010-06-15 19:36:02 UTC
+80,7,Munchner-Style Helles,2010-06-15 19:39:29 UTC
+81,7,Dortmunder/European-Style Export,2010-06-15 19:36:27 UTC
+82,7,Vienna-Style Lager,2010-06-15 19:36:34 UTC
+83,7,German-Style Marzen,2010-07-08 17:59:32 UTC
+84,7,German-Style Oktoberfest,2010-06-15 19:37:01 UTC
+85,7,European-Style Dark,2010-06-15 19:37:09 UTC
+86,7,German-Style Schwarzbier,2010-06-15 19:37:36 UTC
+87,7,Bamberg-Style Marzen,2010-07-08 17:59:39 UTC
+88,7,Bamberg-Style Helles Rauchbier,2010-06-15 19:37:50 UTC
+89,7,Bamberg-Style Bock Rauchbier,2010-06-15 19:37:58 UTC
+90,7,Traditional German-Style Bock,2010-06-15 19:38:06 UTC
+91,7,German-Style Heller Bock/Maibock,2010-06-15 19:38:15 UTC
+92,7,German-Style Doppelbock,2010-06-15 19:38:22 UTC
+93,7,German-Style Eisbock,2010-06-15 19:38:30 UTC
+94,7,Kellerbier - Lager,2010-06-15 19:38:49 UTC
+95,8,American-Style Lager,2010-06-15 19:40:43 UTC
+96,8,American-Style Light Lager,2010-06-15 19:40:46 UTC
+97,8,American-Style Low-Carb Light Lager,2010-06-15 19:41:05 UTC
+98,8,American-Style Amber Lager,2010-06-15 19:41:18 UTC
+99,8,American-Style Premium Lager,2010-06-15 19:41:26 UTC
+100,8,American-Style Pilsener,2010-06-15 19:41:33 UTC
+101,8,American-Style Ice Lager,2010-06-15 19:41:43 UTC
+102,8,American-Style Malt Liquor,2010-06-15 19:41:51 UTC
+103,8,American-Style Amber Lager,2010-06-15 19:41:58 UTC
+104,8,American-Style Marzen/Oktoberfest,2010-06-15 19:44:27 UTC
+105,8,American-Style Dark Lager,2010-06-15 19:42:28 UTC
+106,9,Baltic-Style Porter,2010-06-15 19:42:40 UTC
+107,9,Australasian-Style Light Lager,2010-06-15 19:44:09 UTC
+108,9,Latin American-Style Light Lager,2010-06-15 19:43:29 UTC
+109,9,Tropical-Style Light Lager,2010-06-15 19:43:37 UTC
+110,10,International-Style Pilsener,2010-06-15 19:43:49 UTC
+111,10,Dry Lager,2010-06-15 19:43:57 UTC
+112,11,Session Beer,2010-06-15 19:45:11 UTC
+113,11,American-Style Cream Ale or Lager,2010-06-15 19:45:19 UTC
+114,11,California Common Beer,2010-06-15 19:45:25 UTC
+115,11,Japanese Sake-Yeast Beer,2010-06-15 19:45:34 UTC
+116,11,Light American Wheat Ale or Lager,2010-06-15 19:45:42 UTC
+117,11,Fruit Wheat Ale or Lager,2010-06-15 19:45:58 UTC
+118,11,Dark American Wheat Ale or Lager,2010-06-15 19:46:06 UTC
+119,11,American Rye Ale or Lager,2010-06-15 19:46:14 UTC
+120,11,German-Style Rye Ale,2010-06-15 19:46:24 UTC
+121,11,Fruit Beer,2010-06-15 19:46:33 UTC
+122,11,Field Beer,2010-06-15 19:46:41 UTC
+123,11,Pumpkin Beer,2010-06-15 19:47:18 UTC
+124,11,Chocolate/Cocoa-Flavored Beer,2010-06-15 19:47:27 UTC
+125,11,Coffee-Flavored Beer,2010-06-15 19:47:35 UTC
+126,11,Herb and Spice Beer,2010-06-15 19:47:40 UTC
+127,11,Specialty Beer,2010-06-15 19:47:48 UTC
+128,11,Specialty Honey Lager or Ale,2010-06-15 19:47:54 UTC
+129,11,Gluten-Free Beer,2010-06-15 19:48:01 UTC
+130,11,Smoke Beer,2010-06-15 19:48:10 UTC
+131,11,Experimental Beer,2010-06-15 19:48:17 UTC
+132,11,Out of Category,2010-06-15 19:48:27 UTC
+133,11,Wood- and Barrel-Aged Beer,2010-06-15 19:48:39 UTC
+134,11,Wood- and Barrel-Aged Pale to Amber Beer,2010-06-15 19:48:53 UTC
+135,11,Wood- and Barrel-Aged Dark Beer,2010-06-15 19:49:01 UTC
+136,11,Wood- and Barrel-Aged Strong Beer,2010-06-15 19:49:08 UTC
+137,11,Wood- and Barrel-Aged Sour Beer,2010-06-15 19:49:18 UTC
+138,11,Aged Beer,2010-06-15 19:49:25 UTC
+139,11,Other Strong Ale or Lager,2010-06-15 19:49:32 UTC
+140,11,Non-Alcoholic Beer,2010-06-15 19:49:47 UTC
+141,11,Winter Warmer,2010-07-11 16:43:25 UTC

@@ -1,0 +1,12 @@
+id,cat_name,last_mod
+1,British Ale,2010-10-24 13:50:10 UTC
+2,Irish Ale,2010-06-08 00:00:00 UTC
+3,North American Ale,2010-06-08 00:00:00 UTC
+4,German Ale,2010-06-08 00:00:00 UTC
+5,Belgian and French Ale,2010-06-08 00:00:00 UTC
+6,International Ale,2010-06-08 00:00:00 UTC
+7,German Lager,2010-06-08 00:00:00 UTC
+8,North American Lager,2010-06-08 00:00:00 UTC
+9,Other Lager,2010-06-08 00:00:00 UTC
+10,International Lager,2010-06-08 00:00:00 UTC
+11,Other Style,2010-06-08 00:00:00 UTC

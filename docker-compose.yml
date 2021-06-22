@@ -129,8 +129,6 @@ services:
             - datanode
         environment:
             - INIT_DAEMON_STEP=setup_spark
-        volumes:
-            - spark_events:/tmp/spark-events
         ports:
             - 8080:8080
             - 7077:7077
@@ -160,7 +158,6 @@ volumes:
     hadoop_datanode:
     hadoop_historyserver:
     hive_metastore:
-    spark_events:
 
 networks:
     hadoop:

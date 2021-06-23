@@ -1,5 +1,7 @@
 # Docker Hadoop Workbench
 
+A Hadoop cluster based on Docker, including Hive and Spark (Spark History Server is optional).
+
 ## Introduction
 This repository uses [Docker Compose](https://docs.docker.com/compose/) to initialize a Hadoop cluster including the following:
 
@@ -8,6 +10,16 @@ This repository uses [Docker Compose](https://docs.docker.com/compose/) to initi
 - Spark
 
 Please note that this project is built on top of [Big Data Europe](https://github.com/big-data-europe) works. Please check their [Docker Hub](https://hub.docker.com/u/bde2020/) for latest images.
+
+This project is based on the following Docker versions:
+```
+Client:
+ Version:           20.10.2
+Server: Docker Engine - Community
+ Engine:
+  Version:          20.10.6
+docker-compose version 1.29.1, build c34c88b2
+```
 
 ## Quick Start
 

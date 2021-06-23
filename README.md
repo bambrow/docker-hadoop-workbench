@@ -99,10 +99,13 @@ spark: org.apache.spark.sql.SparkSession = org.apache.spark.sql.SparkSession@122
 After all services are up, run the following to copy the script into `spark-master` container and start history server:
 
 ```bash
-docker cp scripts/start-spark-history-server.sh spark-master:start-spark-history-server.sh
-docker cp scripts/spark-defaults.conf spark-master:/spark/conf/spark-defaults.conf
+# create log directory 
 docker exec -it namenode /bin/bash
 hdfs dfs -mkdir -p /user/spark/applicationHistory
+exit
+# start history server, do this everytime after restarting spark-master
+docker cp scripts/start-spark-history-server.sh spark-master:start-spark-history-server.sh
+docker cp scripts/spark-defaults.conf spark-master:/spark/conf/spark-defaults.conf
 docker exec -it spark-master /bin/bash
 ./start-spark-history-server.sh
 exit

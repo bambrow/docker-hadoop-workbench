@@ -29,6 +29,12 @@ To start the cluster simply run:
 docker-compose up -d
 ```
 
+Alternatively, you can use `v2`, which is built on top of my own `spark-master` and `spark-history-server`, to avoid starting Spark History Server on your own:
+
+```
+docker-compose -f docker-compose-v2.yml up -d
+```
+
 ## Interfaces
 
 - Namenode: http://localhost:9870/dfshealth.html#tab-overview
@@ -95,6 +101,8 @@ spark: org.apache.spark.sql.SparkSession = org.apache.spark.sql.SparkSession@122
 ```
 
 ## Add Spark History Server
+
+NOTE: skip this part if you use `v2`.
 
 After all services are up, run the following to copy the script into `spark-master` container and start history server:
 
@@ -175,10 +183,12 @@ You should be able to see the job in http://localhost:8088/cluster/apps and http
 
 ## Run Spark Shell
 
-Make sure you have prepared the data and created the table in the previous step.
+Make sure you have prepared the data and created the table in the previous step. Please note you do not need to copy the `hive-site.xml` file and pass in the `--master` if you use v2.
 
 ```
+# no need to copy if you use v2
 docker cp scripts/spark-hive-site.xml spark-master:/spark/conf/hive-site.xml
+
 docker exec -it spark-master spark/bin/spark-shell --master spark://spark-master:7077
 
 scala> spark.sql("show databases").show
@@ -210,6 +220,8 @@ WARN Master: Got heartbeat from unregistered worker worker-20210622022950-xxx.xx
 Similarly, to run `spark-sql`, use `docker exec -it spark-master spark/bin/spark-sql --master spark://spark-master:7077`.
 
 ## Run Spark Submit
+
+Please note you do not need to pass in the `--master` if you use v2.
 
 ```bash
 docker exec -it spark-master /spark/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://spark-master:7077 /spark/examples/jars/spark-examples_2.12-3.1.1.jar 100

@@ -1,0 +1,9 @@
+version: "3"
+services:
+
+
+
+networks:
+    hue:
+        external:
+            name: hadoop

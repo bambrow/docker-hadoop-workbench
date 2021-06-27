@@ -35,6 +35,15 @@ Alternatively, you can use `v2`, which is built on top of my own `spark-master` 
 docker-compose -f docker-compose-v2.yml up -d
 ```
 
+At first `spark-history-server` will fail. Run the following to bring it up again:
+
+```bash
+docker exec -it namenode hdfs dfs -mkdir -p /user/spark/applicationHistory
+docker-compose -f docker-compose-v2.yml up -d spark-history-server
+```
+
+As long as the volumes are not cleaned up, there is no need to rerun the previous two commands every time you restart the cluster.
+
 ## Interfaces
 
 - Namenode: http://localhost:9870/dfshealth.html#tab-overview
@@ -45,8 +54,9 @@ docker-compose -f docker-compose-v2.yml up -d
 - HiveServer2: http://localhost:10002/
 - Spark Master: http://localhost:8080/
 - Spark Worker: http://localhost:8081/
-- Spark Context WebUI: http://localhost:4040/ (only works when `spark-shell` is running on `spark-master`)
+- Spark Job WebUI: http://localhost:4040/ (only works when Spark job is running on `spark-master`)
 - Presto WebUI: http://localhost:8090/
+- Spark History Server：http://localhost:18080/ (need extra steps to start)
 
 ## Connections
 
@@ -100,17 +110,29 @@ import org.apache.spark.sql.SparkSession
 spark: org.apache.spark.sql.SparkSession = org.apache.spark.sql.SparkSession@1223467f
 ```
 
+Use [Presto CLI](https://prestodb.io/docs/current/installation/cli.html) to connect to Presto and query Hive data:
+
+```bash
+wget https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.255/presto-cli-0.255-executable.jar
+mv presto-cli-0.255-executable.jar presto
+chmod +x presto
+./presto --server localhost:8090 --catalog hive --schema default
+```
+
 ## Add Spark History Server
 
 NOTE: skip this part if you use `v2`.
 
-After all services are up, run the following to copy the script into `spark-master` container and start history server:
+After all services are up, run the following to make the directory required for Spark History Server:
 
 ```bash
 # create log directory 
-docker exec -it namenode /bin/bash
-hdfs dfs -mkdir -p /user/spark/applicationHistory
-exit
+docker exec -it namenode hdfs dfs -mkdir -p /user/spark/applicationHistory
+```
+
+Then, run the following to copy the script into `spark-master` container and start history server:
+
+```bash
 # start history server, do this everytime after restarting spark-master
 docker cp scripts/start-spark-history-server.sh spark-master:start-spark-history-server.sh
 docker cp scripts/spark-defaults.conf spark-master:/spark/conf/spark-defaults.conf

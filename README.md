@@ -1,6 +1,6 @@
 # Docker Hadoop Workbench
 
-A Hadoop cluster based on Docker, including Hive and Spark (Spark History Server is optional).
+A Hadoop cluster based on Docker, including Hive and Spark.
 
 ## Introduction
 This repository uses [Docker Compose](https://docs.docker.com/compose/) to initialize a Hadoop cluster including the following:
@@ -26,23 +26,16 @@ docker-compose version 1.29.1, build c34c88b2
 To start the cluster simply run:
 
 ```
-docker-compose up -d
+./start_demo.sh
 ```
 
-Alternatively, you can use `v2`, which is built on top of my own `spark-master` and `spark-history-server`, to avoid starting Spark History Server on your own:
+Alternatively, you can use `v2`, which is built on top of my own `spark-master` and `spark-history-server`:
 
 ```
-docker-compose -f docker-compose-v2.yml up -d
+./start_demo_v2.sh
 ```
 
-At first `spark-history-server` will fail. Run the following to bring it up again:
-
-```bash
-docker exec -it namenode hdfs dfs -mkdir -p /user/spark/applicationHistory
-docker-compose -f docker-compose-v2.yml up -d spark-history-server
-```
-
-As long as the volumes are not cleaned up, there is no need to rerun the previous two commands every time you restart the cluster.
+You can stop the cluster using `./stop_demo.sh` or `./stop_demo_v2.sh`. Also you can modify `DOCKER_COMPOSE_FILE` in `start_demo.sh` and `stop_demo.sh` to use other YAML files.
 
 ## Interfaces
 
@@ -56,7 +49,7 @@ As long as the volumes are not cleaned up, there is no need to rerun the previou
 - Spark Worker: http://localhost:8081/
 - Spark Job WebUI: http://localhost:4040/ (only works when Spark job is running on `spark-master`)
 - Presto WebUI: http://localhost:8090/
-- Spark History Server：http://localhost:18080/ (need extra steps to start)
+- Spark History Server：http://localhost:18080/
 
 ## Connections
 
@@ -118,30 +111,6 @@ mv presto-cli-0.255-executable.jar presto
 chmod +x presto
 ./presto --server localhost:8090 --catalog hive --schema default
 ```
-
-## Add Spark History Server
-
-NOTE: skip this part if you use `v2`.
-
-After all services are up, run the following to make the directory required for Spark History Server:
-
-```bash
-# create log directory 
-docker exec -it namenode hdfs dfs -mkdir -p /user/spark/applicationHistory
-```
-
-Then, run the following to copy the script into `spark-master` container and start history server:
-
-```bash
-# start history server, do this everytime after restarting spark-master
-docker cp scripts/start-spark-history-server.sh spark-master:start-spark-history-server.sh
-docker cp scripts/spark-defaults.conf spark-master:/spark/conf/spark-defaults.conf
-docker exec -it spark-master /bin/bash
-./start-spark-history-server.sh
-exit
-```
-
-Then you will be able to access the Spark History Server via http://localhost:18080/. Please note that you need to do this every time after restarting `spark-master`.
 
 ## Run MapReduce Job `WordCount`
 
@@ -205,13 +174,10 @@ You should be able to see the job in http://localhost:8088/cluster/apps and http
 
 ## Run Spark Shell
 
-Make sure you have prepared the data and created the table in the previous step. Please note you do not need to copy the `hive-site.xml` file and pass in the `--master` if you use v2.
+Make sure you have prepared the data and created the table in the previous step.
 
 ```
-# no need to copy if you use v2
-docker cp scripts/spark-hive-site.xml spark-master:/spark/conf/hive-site.xml
-
-docker exec -it spark-master spark/bin/spark-shell --master spark://spark-master:7077
+docker exec -it spark-master spark/bin/spark-shell
 
 scala> spark.sql("show databases").show
 +---------+
@@ -239,14 +205,12 @@ Please check the logs of `spark-master` using `docker logs -f spark-master`. If 
 WARN Master: Got heartbeat from unregistered worker worker-20210622022950-xxx.xx.xx.xx-xxxxx. This worker was never registered, so ignoring the heartbeat.
 ```
 
-Similarly, to run `spark-sql`, use `docker exec -it spark-master spark/bin/spark-sql --master spark://spark-master:7077`.
+Similarly, to run `spark-sql`, use `docker exec -it spark-master spark/bin/spark-sql`.
 
 ## Run Spark Submit
 
-Please note you do not need to pass in the `--master` if you use v2.
-
 ```bash
-docker exec -it spark-master /spark/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://spark-master:7077 /spark/examples/jars/spark-examples_2.12-3.1.1.jar 100
+docker exec -it spark-master /spark/bin/spark-submit --class org.apache.spark.examples.SparkPi /spark/examples/jars/spark-examples_2.12-3.1.1.jar 100
 ```
 
 You should be able to see Spark Pi in http://localhost:8080/ and your job in http://localhost:4040/jobs/.

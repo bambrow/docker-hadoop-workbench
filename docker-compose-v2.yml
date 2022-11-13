@@ -171,7 +171,3 @@ volumes:
     hadoop_datanode:
     hadoop_historyserver:
     hive_metastore:
-
-networks:
-    hadoop:
-        driver: bridge

@@ -1,6 +1,6 @@
 # Networks can also be given a custom name (since version 3.5):
 # https://docs.docker.com/compose/networking/#specify-custom-networks
-version: "3.9"
+version: "3"
 services:
     namenode:
         image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
@@ -160,7 +160,3 @@ volumes:
     hadoop_datanode:
     hadoop_historyserver:
     hive_metastore:
-
-networks:
-    hadoop:
-        driver: bridge

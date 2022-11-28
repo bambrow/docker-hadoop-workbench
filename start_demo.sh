@@ -3,11 +3,11 @@
 DOCKER_COMPOSE_FILE=docker-compose-spark3.0.2.yml
 
 SCRIPT_PATH=$(cd `dirname $0`; pwd)
-docker-compose -f ${SCRIPT_PATH}/${DOCKER_COMPOSE_FILE} down
-docker-compose -f ${SCRIPT_PATH}/${DOCKER_COMPOSE_FILE} pull
+docker compose -f ${SCRIPT_PATH}/${DOCKER_COMPOSE_FILE} down
+docker compose -f ${SCRIPT_PATH}/${DOCKER_COMPOSE_FILE} pull
 sleep 5
 
-docker-compose -f ${SCRIPT_PATH}/${DOCKER_COMPOSE_FILE} up -d
+docker compose -f ${SCRIPT_PATH}/${DOCKER_COMPOSE_FILE} up -d
 sleep 15
 
 docker exec -it namenode hdfs dfs -mkdir -p /user/spark/applicationHistory

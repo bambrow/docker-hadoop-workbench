@@ -1,3 +1,5 @@
+# Networks can also be given a custom name (since version 3.5):
+# https://docs.docker.com/compose/networking/#specify-custom-networks
 version: "3"
 services:
     namenode:
@@ -20,7 +22,7 @@ services:
         image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
         container_name: datanode
         restart: always
-        depends_on: 
+        depends_on:
             - namenode
         volumes:
             - hadoop_datanode:/hadoop/dfs/data
@@ -78,7 +80,7 @@ services:
         image: bde2020/hive:2.3.2-postgresql-metastore
         container_name: hive-server
         restart: always
-        depends_on: 
+        depends_on:
             - namenode
             - datanode
         environment:
@@ -120,7 +122,7 @@ services:
             - 8090:8080
         networks:
             - hadoop
-        
+    
     spark-master:
         image: bde2020/spark-master:3.1.1-hadoop3.2
         container_name: spark-master
@@ -161,4 +163,4 @@ volumes:
 
 networks:
     hadoop:
-        name: hadoop
+        driver: bridge
